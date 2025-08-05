@@ -1,0 +1,265 @@
+/* Markdown styling */
+.markdown-content {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Headings */
+.markdown-content h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+.markdown-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #3b82f6;
+}
+
+.markdown-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+/* Lists */
+.markdown-content ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+}
+
+/* Tables */
+.markdown-content table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.markdown-content th {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.markdown-content td {
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+}
+
+.markdown-content tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Emphasis */
+.markdown-content strong,
+.markdown-content b {
+  font-weight: 600;
+  color: #111827;
+}
+
+.markdown-content em,
+.markdown-content i {
+  font-style: italic;
+}
+
+/* Code blocks */
+.markdown-content code {
+  font-family: monospace;
+  background-color: #f3f4f6;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.markdown-content pre {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.markdown-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+  border-left: 4px solid #d1d5db;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Links */
+.markdown-content a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  text-decoration: none;
+}
+
+/* Horizontal rule */
+.markdown-content hr {
+  border: 0;
+  border-top: 1px solid #d1d5db;
+  margin: 1.5rem 0;
+}
+
+/* Paragraphs */
+.markdown-content p {
+  margin-bottom: 0.75rem;
+}
+
+/* Medical-specific styling */
+.markdown-content .normal {
+  color: #047857;
+  font-weight: 600;
+}
+
+.markdown-content .abnormal {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.markdown-content .borderline {
+  color: #d97706;
+  font-weight: 600;
+}
+
+/* Risk factor styling */
+.markdown-content .risk-factor {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #f8fafc;
+  border-left: 4px solid #3b82f6;
+}
+
+.markdown-content .risk-factor h4 {
+  margin-top: 0;
+  color: #1e40af;
+}
+
+.markdown-content .risk-factor p {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content .risk-factor-high {
+  border-left-color: #ef4444;
+}
+
+.markdown-content .risk-factor-medium {
+  border-left-color: #f59e0b;
+}
+
+.markdown-content .risk-factor-low {
+  border-left-color: #10b981;
+}
+
+/* Reference styling */
+.markdown-content .reference {
+  font-size: 0.8rem;
+  color: #4b5563;
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.markdown-content .reference ol {
+  margin-left: 1rem;
+}
+
+.markdown-content .reference li {
+  margin-bottom: 0.5rem;
+}
+
+/* Medical values table styling */
+.markdown-content .medical-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.markdown-content .medical-table th {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+  border: 1px solid #bfdbfe;
+}
+
+.markdown-content .medical-table td {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.markdown-content .medical-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.markdown-content .medical-table .value-normal {
+  color: #047857;
+  font-weight: 600;
+}
+
+.markdown-content .medical-table .value-abnormal {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.markdown-content .medical-table .value-borderline {
+  color: #d97706;
+  font-weight: 600;
+}
+
+/* External links styling */
+.markdown-content a.external-link {
+  color: #2563eb;
+  text-decoration: none;
+  border-bottom: 1px dotted #2563eb;
+  padding-bottom: 1px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.markdown-content a.external-link::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232563eb'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'%3E%3C/path%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,328 @@
+/* Chat interface styling */
+
+/* Medical-themed background pattern */
+.chat-messages-container {
+  background-color: #f0f7ff;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23dbeafe' fill-opacity='0.6' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Dark mode background */
+.dark .chat-messages-container {
+  background-color: #0f172a;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231e3a8a' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar for chat messages */
+.chat-messages-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages-container > div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.chat-messages-container::-webkit-scrollbar {
+  width: 8px; /* Slightly wider for better visibility */
+}
+
+.chat-messages-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode scrollbar */
+.dark .chat-messages-container {
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.dark .chat-messages-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .chat-messages-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .chat-messages-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Message bubbles */
+.message-bubble-right {
+  border-radius: 18px 18px 4px 18px;
+  position: relative;
+}
+
+.message-bubble-right-file {
+  border-radius: 18px 18px 4px 18px;
+  position: relative;
+}
+
+.message-bubble-right-appointment {
+  border-radius: 18px 18px 4px 18px;
+  position: relative;
+}
+
+.message-bubble-left {
+  border-radius: 18px 18px 18px 4px;
+  position: relative;
+}
+
+/* WhatsApp-like styling */
+.message-bubble-right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at top right, transparent 16px, #3b82f6 0);
+}
+
+.message-bubble-right-file::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at top right, transparent 16px, #2563eb 0);
+}
+
+.message-bubble-right-appointment::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at top right, transparent 16px, #4f46e5 0);
+}
+
+.message-bubble-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at top left, transparent 16px, #ffffff 0);
+}
+
+/* Dark mode message bubble tail */
+.dark .message-bubble-left::before {
+  background: radial-gradient(circle at top left, transparent 16px, #374151 0);
+}
+
+/* Fix for long messages */
+.message-bubble-right,
+.message-bubble-right-file,
+.message-bubble-right-appointment,
+.message-bubble-left {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Appointment messages styling */
+.message-bubble-right-appointment p,
+.message-bubble-left p {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  font-size: 0.875rem; /* Smaller font size for better fit */
+  line-height: 1.25rem;
+}
+
+/* Appointment message specific styling */
+.message-bubble-right-appointment {
+  max-width: 220px !important; /* Limit width for better display */
+}
+
+/* Ensure appointment content is properly displayed */
+.message-bubble-right-appointment .flex,
+.message-bubble-left .flex {
+  align-items: flex-start;
+}
+
+/* Chat container fixes */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 90vh; /* Reduced from 100vh to prevent overflow */
+  overflow: hidden;
+  position: relative;
+}
+
+/* WhatsApp-style inline popups */
+.whatsapp-popup {
+  position: absolute;
+  bottom: 80px; /* Position above the input area */
+  left: 0;
+  right: 0;
+  z-index: 20;
+  border-radius: 8px;
+  margin: 0 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-height: 40vh; /* Limit height to prevent overflow */
+  overflow-y: auto;
+  transform-origin: bottom center;
+  animation: popup-slide-up 0.2s ease-out;
+}
+
+@keyframes popup-slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Scrollbar for popups */
+.whatsapp-popup {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.whatsapp-popup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.whatsapp-popup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.whatsapp-popup::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.dark .whatsapp-popup::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive scaling for different screen sizes */
+@media (max-height: 700px) {
+  .whatsapp-popup {
+    max-height: 35vh;
+  }
+
+  .chat-container {
+    max-height: 70vh !important;
+    margin-top: 10px !important;
+  }
+
+  .chat-messages-container {
+    height: calc(100% - 90px) !important;
+  }
+}
+
+@media (max-height: 600px) {
+  .whatsapp-popup {
+    max-height: 30vh;
+  }
+
+  .chat-container {
+    max-height: 65vh !important;
+    margin-top: 15px !important;
+  }
+
+  .chat-messages-container {
+    height: calc(100% - 80px) !important;
+  }
+}
+
+@media (max-height: 500px) {
+  .chat-container {
+    max-height: 60vh !important;
+    margin-top: 20px !important;
+  }
+
+  .message-bubble-right::before,
+  .message-bubble-right-file::before,
+  .message-bubble-right-appointment::before,
+  .message-bubble-left::before {
+    display: none; /* Hide bubble tails on very small screens */
+  }
+}
+
+/* Default spacing for chat container */
+.chat-container {
+  margin-top: 5px;
+  margin-bottom: 25px !important;
+}
+
+/* Ensure chat messages container scales properly */
+.chat-messages-container {
+  flex: 1;
+  min-height: 0; /* Important for proper flexbox behavior */
+  max-height: calc(100% - 60px); /* Account for header and input */
+  padding-bottom: 10px; /* Add some padding at the bottom */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.chat-messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.dark .chat-messages-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure messages don't get cut off */
+.chat-messages-container > div {
+  padding-bottom: 30px;
+}
+
+/* Improve message spacing */
+.chat-messages-container .mb-1 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Add more space between date separators and messages */
+.chat-messages-container .my-3 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Ensure the last message has enough space at the bottom */
+.chat-messages-container > div > div:last-of-type {
+  margin-bottom: 15px;
+}
