@@ -20,7 +20,9 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || '*', // Allow configured frontend or all origins for testing
+  origin: process.env.NODE_ENV === 'production' 
+    ? [process.env.FRONTEND_URL || 'https://medbot-frontend.onrender.com'] 
+    : 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -48,6 +50,9 @@ app.get('/health', (req, res) => {
 });
 
 // API health check
+app.get('/', (req, res) => {
+  res.status(200).send('RAG Backend Service is running');
+});
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'API OK',
@@ -523,6 +528,12 @@ if (process.env.NODE_ENV === 'production') {
     }
   });
 }
+
+// Global error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
 
 // Start the server
 connectToMongoDB().then(() => {
