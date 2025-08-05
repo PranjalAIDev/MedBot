@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
-  origin: '*', // Allow all origins for testing
+  origin: process.env.FRONTEND_URL || '*', // Allow configured frontend or all origins for testing
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization']

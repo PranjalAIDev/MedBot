@@ -7,15 +7,19 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "module": "CommonJS",
-    "composite": true, // Required for project references
-    "emitDeclarationOnly": true, // Emits only .d.ts files if you don't need compiled JS
-    "outDir": "./dist", // Specify output directory
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "composite": true,
     "skipLibCheck": true,
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": [
-    "src/**/*.ts"
+    "vite.config.ts"
   ]
 }

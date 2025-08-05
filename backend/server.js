@@ -12,9 +12,13 @@ const path = require("path");
 require("dotenv").config();
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.use(cors());
+// Configure CORS for production
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true
+}));
 
 // Configure Multer for file uploads
 const upload = multer({
@@ -40,6 +44,15 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 const mongoUri = process.env.MONGO_URI;
 const dbName = "medBook";
 let db;
+
+// Health check endpoint for render
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
+});
 
 MongoClient.connect(mongoUri)
   .then((client) => {

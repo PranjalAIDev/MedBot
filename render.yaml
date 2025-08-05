@@ -1,0 +1,96 @@
+services:
+  # Main auth backend service
+  - type: web
+    name: medbot-auth-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    repo: https://github.com/PranjalAIDev/MedBot
+    rootDir: backendvaibhav
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: FRONTEND_URL
+        fromService:
+          name: medbot-frontend
+          type: web
+          property: url
+
+  # OCR/PDF processing backend
+  - type: web
+    name: medbot-ocr-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    repo: https://github.com/PranjalAIDev/MedBot
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10001
+      - key: MONGO_URI
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        fromService:
+          name: medbot-frontend
+          type: web
+          property: url
+
+  # RAG backend service
+  - type: web
+    name: medbot-rag-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    repo: https://github.com/PranjalAIDev/MedBot
+    rootDir: rag-backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10002
+      - key: MONGO_URI
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        fromService:
+          name: medbot-frontend
+          type: web
+          property: url
+
+  # Frontend service
+  - type: web
+    name: medbot-frontend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview -- --port $PORT
+    repo: https://github.com/PranjalAIDev/MedBot
+    rootDir: frontend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BACKEND_API_URL
+        fromService:
+          name: medbot-auth-backend
+          type: web
+          property: url
+      - key: OCR_BACKEND_URL
+        fromService:
+          name: medbot-ocr-backend
+          type: web
+          property: url
+      - key: RAG_BACKEND_URL
+        fromService:
+          name: medbot-rag-backend
+          type: web
+          property: url

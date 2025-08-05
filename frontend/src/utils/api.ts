@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
 
-// Base URL for all API requests
-const API_BASE_URL = '/api';
+// Base URL for all API requests - use environment variables for deployment flexibility
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 // Create an axios instance with default config
 const api = axios.create({
@@ -9,6 +9,7 @@ const api = axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  withCredentials: true, // This helps with CORS cookies if needed
 });
 
 // Add a request interceptor to include the auth token in all requests

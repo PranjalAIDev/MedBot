@@ -13,10 +13,22 @@ const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*', // Allow requests from your frontend
+  credentials: true // Allow cookies and authentication headers
+}));
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
+
+// Health check endpoint for render
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
+});
 const dburl = process.env.MONGO_URI || "mongodb+srv://yashbudhia:khuljas1ms1m@cluster0.nnafmtq.mongodb.net/medbook-users";
 
 mongoose
